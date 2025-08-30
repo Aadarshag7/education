@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,3 +37,17 @@ Route::get('contact',function(){
 Route::get('blog',function(){
     return view('blog');
 })->name('blog');
+
+
+Route::controller(AuthController::class)->group(function(){
+Route::get('register','register')->name('register');
+Route::post('register','registerSave')->name('registerSave');
+Route::get('login','login')->name('login');
+Route::post('login','loginAction')->name('loginAction');
+});
+
+Route::get('teacher',function(){
+    return view('teacher');
+})->name('teacher');
+
+
