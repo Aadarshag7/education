@@ -2,6 +2,9 @@
 <html>
     <head>
         <body>
+          <form class="goto">
+            <input type="name" placeholder="Name">
+          </form>
            
 
   <div class="container">
@@ -13,6 +16,8 @@
 <style>
   .container{color:red; transition:transform 0.3s;}
   .point{color:blue; padding:100px;}
+  .goto{color:red;}
+  
   
   </style>
 
