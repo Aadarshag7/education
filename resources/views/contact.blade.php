@@ -1,29 +1,101 @@
-@extends('layouts.app')
-@section('title','contact')
-@section('content')
-<section class="section bg-gray">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h2 class="section-title">Contact Us</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-7 mb-4 mb-lg-0">
-        <form action="#">
-          <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name">
-          <input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="Your Email">
-          <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject">
-          <textarea name="message" id="message" class="form-control mb-3" placeholder="Your Message"></textarea>
-          <button type="submit" value="send" class="btn btn-primary">SEND MESSAGE</button>
-        </form>
-      </div>
-      <div class="col-lg-5">
-        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit recusandae voluptates doloremque veniam temporibus porro culpa ipsa, nisi soluta minima saepe laboriosam debitis nesciunt. Dolore, labore. Accusamus nulla sed cum aliquid exercitationem debitis error harum porro maxime quo iusto aliquam dicta modi earum fugiat, vel possimus commodi, deleniti et veniam, fuga ipsum praesentium. Odit unde optio nulla ipsum quae obcaecati! Quod esse natus quibusdam asperiores quam vel, tempore itaque architecto ducimus expedita</p>
-        <a href="tel:+8802057843248" class="text-color h5 d-block">+880 20 5784 3248</a>
-        <a href="mailto:yourmail@email.com" class="mb-5 text-color h5 d-block">yourmail@email.com</a>
-        <p>71 Shelton Street<br>London WC2H 9JQ England</p>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transform vs Opacity (Simple)</title>
+  <style>
+    body {
+      background: #eee;
+    }
+
+    .red {
+      width: 150px;
+      height: 150px;
+      background: red;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      z-index: 2;
+    }
+
+    /* Example 1: transform creates stacking context */
+    .transform-parent {
+      position: absolute;
+      top: 100px;
+      left: 80px;
+      width: 150px;
+      height: 150px;
+      background: black;
+      z-index: 1;
+    }
+
+    .transform-child {
+      background: yellow;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      z-index: 999; /* doesn't go above red because trapped */
+    }
+
+    /* Example 2: opacity creates stacking context */
+    .opacity-parent {
+      position: absolute;
+      top: 270px;
+      left: 80px;
+      width: 150px;
+      height: 150px;
+      background: black;
+      opacity: 0.9;* creates stacking context */
+      z-index: 2;
+    }
+
+    .opacity-child {
+      background: lime;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 250px;
+      left: 25px;
+      z-index: 999; /* trapped again */
+    }
+   .op{
+    background:blue;
+    width:100px;
+    height:100px;
+    position:absolute;
+    top:270px;
+    right: 200px;
+    z-index:3;
+    opacity:0.8;
+    
+   }
+
+   .op1{
+    background:red;
+    width:50px;
+    height:50px;
+    position:relative;
+    top:10px;
+    right:50px;
+    z-index: 999;
+   }
+  </style>
+</head>
+<body>
+  <div class="red"></div>
+
+  <div class="transform-parent">
+    <div class="transform-child"></div>
+  </div>
+
+  <div class="opacity-parent">
+    <div class="opacity-child"></div>
+  </div>
+  <div class="op">
+    <div class="op1"></div>
     </div>
   </div>
-</section>
+</body>
+</html>
