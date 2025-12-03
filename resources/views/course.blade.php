@@ -14,7 +14,7 @@
   width: 200px;
   height: 120px;
   background: tomato;
-  animation: fadeSlide 8s ease-out backwards;
+  animation: fadeSlide 8s ease-out infinite;
 }
 </style>
 

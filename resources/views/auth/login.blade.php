@@ -8,8 +8,10 @@
     display: grid;
     grid-template-columns: repeat( minmax(50px,1fr));
     gap: 10px;
-    padding: 20px;
+    padding: 10px;
     background: lightgray;
+    margin:10px;
+    
   }
 
   .item {

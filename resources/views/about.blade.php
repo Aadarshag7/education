@@ -29,7 +29,7 @@
 }
 </style>
 
-<button class="button">Hover Me</button>
+<button class="button"></button>
 
 </style>
 </head>

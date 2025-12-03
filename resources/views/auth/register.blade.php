@@ -8,15 +8,18 @@
     body {
       margin: 0;
       font-family: sans-serif;
+      height: 100vh;
     }
 
     .container {
       display: grid;
-      grid-template-columns:100%;
-      grid-template-rows:80px 1fr 2fr;
+      /* grid-template-columns:200px 1fr 2fr; */
+      grid-template-rows:10px 1fr 2fr;
       height:100vh;
       gap: 20px;
-      width:100vw;
+      margin:10px;
+      background: red;
+      padding:10px;
     }
 
     nav {
@@ -38,16 +41,17 @@
 
     main {
       background: lightgray;
-      padding: 20px;
+      padding: 10px;
       display: grid;
-      grid-template-columns: 1fr; /* one-column layout for form */
+      /* grid-template-columns: 1fr; one-column layout for form */
       justify-items: start;
+      margin: 10px;
     }
 
     form {
       display: grid;
-      grid-template-columns: 1fr;
-      row-gap: 10px;
+      grid-template-columns: subgrid;
+      /* row-gap: 10px; */
       width: 40%;
     }
 

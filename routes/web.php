@@ -50,4 +50,9 @@ Route::get('teacher',function(){
     return view('teacher');
 })->name('teacher');
 
+Route::get('come',function(){
+    return view('come');
+
+})->name('come');
+
 

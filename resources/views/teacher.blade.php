@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <body>
-          <form class="goto">
-            <input type="name" placeholder="Name">
-          </form>
-           
-
-  <div class="container">
-    <h1> This is a boy </h1>
-  </div>
-  <div class="point">
-    <h5> Hello, this is Aadarsh </h5>
-  </div>
 <style>
-  .container{color:red; transition:transform 0.3s;}
-  .point{color:blue; padding:100px;}
-  .goto{color:red;}
-  
-  
-  </style>
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
 
-        </body>
-    </head>
-</html>
+.circle {
+  width: 500px;
+  height: 500px;
+  background: violet;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+</style>
+
+<div class="circle"></div>

@@ -26,6 +26,7 @@
       width: 150px;
       height: 150px;
       background: black;
+      transform: scale(1);
       z-index: 1;
     }
 
@@ -47,7 +48,7 @@
       width: 150px;
       height: 150px;
       background: black;
-      opacity: 0.9;* creates stacking context */
+      opacity: 0.9; creates stacking context */
       z-index: 2;
     }
 
@@ -99,3 +100,4 @@
   </div>
 </body>
 </html>
+
