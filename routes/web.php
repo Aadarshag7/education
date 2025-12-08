@@ -55,4 +55,11 @@ Route::get('come',function(){
 
 })->name('come');
 
+Route::get('hey',function(){
+    return view('hey');
+})->name('hey');
+
+Route::get('play',function(){
+return view('welcome');
+})->name('play');
 
