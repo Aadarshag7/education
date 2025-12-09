@@ -2,15 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Laravel + Tailwind</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     @vite('resources/css/app.css')
 </head>
-<body class="bg-red-100">
-
-    <div class="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
-        <h1 class="text-2xl font-bold text-blue-600">Tailwind is working!</h1>
-        <p class="mt-4 text-gray-700">This is a Laravel + Vite + Tailwind setup.</p>
+<body class="h-screen">
+    <div class="h-20 ml-2 bg-black ">
+        <div class= "h-6 text-red-500 pt-0.5  bg-green-300">THis</div>
+        <div class=" h-3 m-2 bg-red-400"></div>
     </div>
-
+    <div class="flex gap-2 justify-end items-center h-[200px] bg-gray-500 " >
+        <div class="w-7 h-7 bg-red-500"></div>
+        <div class="w-8 h-8 bg-green-400"></div>
+    </div>
+    <div class="grid grid-cols-[100px_1fr_2fr] h-[300px] bg-yellow-400">
+            <div class= "col-start-2 bg-black "></div>
+            <div class="col-start-2 bg-blue-400  "></div>
+            <div class="col-start-3 bg-green-500 "></div>
+        </div>
+    <div class= "grid grid-cols-3 h-[300px] bg-red-400">
+        <div class="col-start-2 col-end-3 bg-black"></div>
+        <div class="col-start-1 col-end-2 bg-white"></div>
+        <div class="bg-brown"></div>
+    </div>
 </body>
 </html>
