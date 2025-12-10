@@ -6,7 +6,7 @@
     <title>Document</title>
     @vite('resources/css/app.css')
 </head>
-<body class="h-screen">
+<body class="h-[3000px]">
     <div class="h-20 ml-2 bg-black ">
         <div class= "h-6 text-red-500 pt-0.5  bg-green-300">THis</div>
         <div class=" h-3 m-2 bg-red-400"></div>
@@ -15,15 +15,25 @@
         <div class="w-7 h-7 bg-red-500"></div>
         <div class="w-8 h-8 bg-green-400"></div>
     </div>
-    <div class="grid grid-cols-[100px_1fr_2fr] h-[300px] bg-yellow-400">
+    <div class="grid grid-cols-[100px_1fr_2fr] h-[300px] bg-yellow-200">
             <div class= "col-start-2 bg-black "></div>
             <div class="col-start-2 bg-blue-400  "></div>
             <div class="col-start-3 bg-green-500 "></div>
         </div>
-    <div class= "grid grid-cols-3 h-[300px] bg-red-400">
-        <div class="col-start-2 col-end-3 bg-black"></div>
-        <div class="col-start-1 col-end-2 bg-white"></div>
+    <div class= "grid grid-rows-[100px_1fr_2fr] h-[300px]  bg-red-400">
+        <div class=" row-start-1 row-end-3 bg-black"></div>
+        <div class=" row-start-1 bg-white"></div>
         <div class="bg-brown"></div>
     </div>
+   <div class="bg-gradient-to-tr from-red-500 to-green-200 h-[200px]"></div>
+   <div class="bg-[radial-gradient(circle,_blue,_red)] h-[200px]"></div> 
+   <div class="bg-[conic-gradient(red_0deg,_red_120deg,_green_120deg,_green_180deg,blue_180deg,_blue_360deg)] h-[300px] border-9 border-dotted rounded-[50%] "></div>
+   <div class="bg-white m-4 shadow-sm shadow-red-500 h-[300px]"></div>
+   <div class="bg-pink-400 h-[500px]">
+    <div class="bg-black w-[200px] h-[100px] transition-colors transition-transform duration-150 ease-in 
+    hover:translate-y-[30px] hover:bg-yellow-500"></div>
+   </div>
+   <div class="bg-pink-400 h-[100px] w-[200px] animate-fadeIn"></div>
+   
 </body>
 </html>
