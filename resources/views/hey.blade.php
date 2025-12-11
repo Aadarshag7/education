@@ -10,10 +10,12 @@
     <div class="h-20 ml-2 bg-black ">
         <div class= "h-6 text-red-500 pt-0.5  bg-green-300">THis</div>
         <div class=" h-3 m-2 bg-red-400"></div>
+        <button class="bg-red-400  w-full text-xl">click</button>
     </div>
     <div class="flex gap-2 justify-end items-center h-[200px] bg-gray-500 " >
         <div class="w-7 h-7 bg-red-500"></div>
         <div class="w-8 h-8 bg-green-400"></div>
+        <button class="bg-yellow-400  ">enter</button>
     </div>
     <div class="grid grid-cols-[100px_1fr_2fr] h-[300px] bg-yellow-200">
             <div class= "col-start-2 bg-black "></div>
@@ -34,6 +36,13 @@
     hover:translate-y-[30px] hover:bg-yellow-500"></div>
    </div>
    <div class="bg-pink-400 h-[100px] w-[200px] animate-fadeIn"></div>
+   <div class="bg-green-300 h-[200px] relative">
+    <div class="bg-red-500 w-[100px] h-[100px] relative top-2" ></div>
+   </div>
+   <div class="bg-white h-[500px] ">
+    <img src="admin/images/logo.png" alt="MY LOGO" class= "w-100  rounded-full object-cover ">
+    <img src="admin/images/specials-3.png" alt= "my photo" class="w-100  border-1">
+   </div>
    
 </body>
 </html>

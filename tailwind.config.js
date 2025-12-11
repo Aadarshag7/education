@@ -1,21 +1,24 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx,css}",
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./resources/**/*.vue",
   ],
+
   theme: {
     extend: {
       keyframes: {
         fadeIn: {
-          "0%": { transform: "translateY(0)" },
-          "100%": { transform: "translateY(20px)" },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
       animation: {
-        fadeIn: "fadeIn 1s ease-in infinite",
+        fadeIn: "fadeIn 1s ease-in forwards",
       },
     },
   },
+
   plugins: [],
-}
+};
