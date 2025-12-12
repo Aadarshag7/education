@@ -41,7 +41,8 @@
    </div>
    <div class="bg-white h-[500px] ">
     <img src="admin/images/logo.png" alt="MY LOGO" class= "w-100  rounded-full object-cover ">
-    <img src="admin/images/specials-3.png" alt= "my photo" class="w-100  border-1">
+    <img src="admin/images/specials-3.png" alt= "my photo" class="w-100  border-1 relative left-2">
+
    </div>
    
 </body>
