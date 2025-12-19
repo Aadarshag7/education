@@ -41,8 +41,15 @@
    </div>
    <div class="bg-white h-[500px] ">
     <img src="admin/images/logo.png" alt="MY LOGO" class= "w-100  rounded-full object-cover ">
-    <img src="admin/images/specials-3.png" alt= "my photo" class="w-100  border-1 relative left-2">
+    <img src="admin/images/specials-3.png" alt= "my photo" class="w-100 h-50 border-1 relative left-2">
 
+   </div>
+   <div class ="h-[400px] bg-black grid grid-cols-[200px_1fr_2fr]">
+   <div class="bg-red-300 h-[300px] w-500 grid grid-cols-subgrid col-start-1 col-end-4">
+   <div class="bg-yellow-200 col-start-1 col-end-2"></div>
+   <div class="bg-green-200 col-start-2 col-end-3"></div>
+   <div class="bg-blue-400 col-start-3 col-end-4"></div>
+   </div>
    </div>
    
 </body>
