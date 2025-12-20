@@ -63,3 +63,12 @@ Route::get('play',function(){
 return view('welcome');
 })->name('play');
 
+Route::post('/submit',function(Request $request){
+    return response()->json(['recieved'=>$request->all()
+]);
+
+});
+
+Route::get('subi',function(){
+    return view('sub');
+})->name('sub');
