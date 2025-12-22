@@ -51,6 +51,13 @@
    <div class="bg-blue-400 col-start-3 col-end-4"></div>
    </div>
    </div>
+   <div class="h-[200px] bg-white flex flex-col gap-2">
+    <input type = "text" name="name" placeholder="name" class="placeholder border-4 border-red-300 border-solid box-border w-[100px] px-5">
+    <input type="text" placeholder="email" autocomplete="OFF" class="placeholder border-4 border-red-300 ">
+    <input type="password" placeholder="password" autocomplete="new-password" class="placeholder border-4 border-red-300">
+   </div>
+
+   
    
 </body>
 </html>

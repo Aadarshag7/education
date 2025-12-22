@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,8 +65,8 @@ return view('welcome');
 })->name('play');
 
 Route::post('/submit',function(Request $request){
-    return response()->json(['recieved'=>$request->all()
-]);
+    return response()->json($request->all()
+);
 
 });
 
