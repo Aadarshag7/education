@@ -73,3 +73,14 @@ Route::post('/submit',function(Request $request){
 Route::get('subi',function(){
     return view('sub');
 })->name('sub');
+
+Route::get('first',function(){
+    return view('first');
+})->name('first');
+
+Route::post('/submi',function(Request $request){
+    
+    
+    return response()->json($request->all()
+);
+});
