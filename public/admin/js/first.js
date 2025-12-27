@@ -9,7 +9,7 @@ nee.addEventListener("submit",function(e){
     e.preventDefault();
 let dee= gee.value;
 if(dee===""){
-    document.getElementById("result").innerText="name is required";
+    document.getElementById("result").textContent="name is required";
     return;
 }
 
@@ -30,7 +30,7 @@ fetch('/submi',{
 
     },
 
-    body:JSON.stringify({dee:dee})
+        body:JSON.stringify({dee:dee})
 
     })
 .then(response=>response.json())

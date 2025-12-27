@@ -80,7 +80,9 @@ Route::get('first',function(){
 
 Route::post('/submi',function(Request $request){
     
-    
+    $request->validate([
+        'dee'=>'required|min:3'
+    ]);
     return response()->json($request->all()
 );
 });
