@@ -86,3 +86,27 @@ Route::post('/submi',function(Request $request){
     return response()->json($request->all()
 );
 });
+
+Route::get('form',function(){
+    return view('form');
+})->name('form');
+
+
+Route::post('sumi',function(Request $request){
+    $request->validate([
+        'set'=>'required'
+    ]);
+    return response()->json($request->all());
+});
+
+Route::get('err',function(){
+    return view('err');
+})->name('err');
+
+Route::post('siu',function(Request $request){
+    $request->validate([
+        'name'=>'required|min:3',
+        'email'=>'required|min:3'
+    ]);
+    return 'success';
+});
