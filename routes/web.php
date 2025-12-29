@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FersController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -98,15 +99,21 @@ Route::post('sumi',function(Request $request){
     ]);
     return response()->json($request->all());
 });
-
-Route::get('err',function(){
+ 
+Route::get('err', function(){
     return view('err');
 })->name('err');
 
 Route::post('siu',function(Request $request){
     $request->validate([
-        'name'=>'required|min:3',
-        'email'=>'required|min:3'
+        'name'=>'required'
+
     ]);
     return 'success';
+});
+
+Route::controller(FersController::class)->prefix('fers')->group(function(){
+    Route::get('','index')->name('index');
+    Route::get('create','create')->name('create');
+    Route::post('store','store')->name('store');
 });

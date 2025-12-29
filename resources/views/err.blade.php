@@ -8,12 +8,12 @@
 <body>
     <form method="POST" action="/siu">
         @csrf
-        <input type="text" name="name" placeholder="name">
-        <input type="text"name="email" placeholder="email">
-        <button type="submit">do</button>
+        <input type="text" name="name" placeholder="NAME">
+        <input type="text" name="email" placeholder="EMAIL">
+        <button type="submit">DONE </button>
     </form>
-    @if($errors->any())
-    <p style=color:red> {{$errors->first()}}</p>
+    @if ($errors->any())
+    <p>{{$errors->first()}}</p>
     @endif
 </body>
 </html>
