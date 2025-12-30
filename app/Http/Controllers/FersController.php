@@ -54,7 +54,8 @@ class FersController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $fers=Fir::find($id);
+        return view('fers.edit',compact('fers'));
     }
 
     /**
@@ -62,7 +63,9 @@ class FersController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $fers=Fir::find($id);
+        $fers->update($request->all());
+        return redirect()->route('index');
     }
 
     /**
