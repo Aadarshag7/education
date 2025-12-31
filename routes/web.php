@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AaduController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FersController;
 use Illuminate\Support\Facades\Route;
@@ -117,4 +118,16 @@ Route::controller(FersController::class)->prefix('fers')->group(function(){
     Route::get('create','create')->name('create');
     Route::post('store','store')->name('store');
     Route::get('edit/{id}','edit')->name('edit');
+    Route::put('edit/{id}','update')->name('update');
+    Route::delete('destroy/{id}','destroy')->name('destroy');
+});
+
+
+
+Route::controller(AaduController::class)->prefix('aadu')->group(function(){
+    Route::get('','index')->name('aadu.index');
+    Route::post('store','store')->name('aadu.store');
+    Route::get('edit/{id}','edit')->name('aadu.edit');
+    Route::get('create','create')->name('aadu.create');
+    ROute::put('edit/{id}','update')->name('aadu.update');
 });

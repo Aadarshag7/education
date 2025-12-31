@@ -6,7 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="{{route('update',$fers->id)}}" method="POST">
+        @csrf
+        @method('PUT')
+        <input type="text" name="title" value="{{$fers->title}}" placeholder="Title">
+        <input type ="text" name="content" value="{{$fers->content}}" placeholder="Content">
+        <button type = "submit" >DOne</button>
+    </form>
     
 </body>
 </html>

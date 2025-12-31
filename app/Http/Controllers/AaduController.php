@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Models\Fir;
+use App\Models\Aadu;
 use Illuminate\Http\Request;
 
-class FersController extends Controller
+class AaduController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $fers=Fir::all();
-        return view('fers.index',compact('fers'));
+        $aadus=Aadu::all();
+        return view('Aadu.index',compact('aadus'));
     }
 
     /**
@@ -22,23 +21,20 @@ class FersController extends Controller
      */
     public function create()
     {
-        return view('fers.create');
-    
+      return view('Aadu.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    
-    {
-          
-        Fir::create([
-            'title'=>$request->title,
-            'content'=>$request->content
+     {
+        
+        Aadu::create([
+            'name'=>$request->name,
+            'price'=>$request->price
         ]);
-
-        return redirect()->route('index');
+        return  redirect()->route('aadu.index');
     }
 
     /**
@@ -54,8 +50,8 @@ class FersController extends Controller
      */
     public function edit(string $id)
     {
-        $fers=Fir::find($id);
-        return view('fers.edit',compact('fers'));
+        $aadus=Aadu::find($id);
+        return view('Aadu.edit',compact('aadus'));
     }
 
     /**
@@ -63,9 +59,9 @@ class FersController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $fers=Fir::find($id);
-        $fers->update($request->all());
-        return redirect()->route('index');
+        $aadus=Aadu::find($id);
+        $aadus->update($request->all());
+        return redirect()->route('aadu.index');
     }
 
     /**
@@ -73,8 +69,8 @@ class FersController extends Controller
      */
     public function destroy(string $id)
     {
-        $fers=Fir::find($id);
-        $fers->delete();
-        return redirect()->route('index');
+        $aadus=Aadu::find($id);
+        $aadus->delete();
+        return redirect()->route('aadu.index');
     }
 }
