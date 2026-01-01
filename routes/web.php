@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AaduController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BaduController;
 use App\Http\Controllers\FersController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -130,4 +131,10 @@ Route::controller(AaduController::class)->prefix('aadu')->group(function(){
     Route::get('edit/{id}','edit')->name('aadu.edit');
     Route::get('create','create')->name('aadu.create');
     ROute::put('edit/{id}','update')->name('aadu.update');
+});
+
+Route::controller(BaduController::class)->prefix('badu')->group(function(){
+    Route::get('','index')->name('badu.index');
+    Route::post('store','store')->name('badu.store');
+    Route::get('create','create')->name('badu.create');
 });
