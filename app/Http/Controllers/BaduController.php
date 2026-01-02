@@ -29,15 +29,24 @@ class BaduController extends Controller
      */
     public function store(Request $request)
     {
+          
+
+        if($request->hasFile('photo')){
+            $path= $request->file('photo')->store('photos','public');
+            $model->photo=$path;
+        }
+        
+        
         Badu::create([
             'name'=>$request->name,
             'price'=>$request->price,
             'photo'=>$request->photo
         ]);
+      
 
         return redirect()->route('badu.index');
-    }
-
+        }
+    
     /**
      * Display the specified resource.
      */
@@ -64,7 +73,7 @@ class BaduController extends Controller
     {
         $badus=Badu::find($id);
         $badus->update($request->all());
-        return redirect()->route('Badu.index');
+        return redirect()->route('badu.index');
     }
 
     /**
@@ -74,6 +83,6 @@ class BaduController extends Controller
     {
         $badus=Badu::find($id);
         $badus->delete();
-        return redirect()->route('Badu.index');
+        return redirect()->route('badu.index');
     }
 }

@@ -137,4 +137,7 @@ Route::controller(BaduController::class)->prefix('badu')->group(function(){
     Route::get('','index')->name('badu.index');
     Route::post('store','store')->name('badu.store');
     Route::get('create','create')->name('badu.create');
+    Route::get('edit/{id}','edit')->name('badu.edit');
+    Route::put('edit/{id}','update')->name('badu.update');
+    Route::delete('destroy/{id}','destroy')->name('badu.destroy');
 });

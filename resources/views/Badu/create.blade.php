@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{route('badu.store')}}" method="POST">
+    <form action="{{route('badu.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="text" name="name" placeholder="NAME">
         <input type="number" name="price" placeholder="PRICE">
