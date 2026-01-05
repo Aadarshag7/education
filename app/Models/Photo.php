@@ -13,5 +13,7 @@ class Photo extends Model
         'path'
     ];
 
-    
+    public function photo(){
+        return $this->belongsTo(Badu::class);
+    }
 }

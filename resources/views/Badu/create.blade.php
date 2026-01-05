@@ -10,7 +10,7 @@
         @csrf
         <input type="text" name="name" placeholder="NAME">
         <input type="number" name="price" placeholder="PRICE">
-        <input type="file" name="photo" placeholder="PHOTO">
+        <input type="file" name="photo[]" multiple>
         <button type="submit" >DONE</button>
     </form>
     

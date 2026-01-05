@@ -30,20 +30,28 @@ class BaduController extends Controller
     public function store(Request $request)
     {
           
-        $path=null;
-        if($request->hasFile('photo')){
-            $path= $request->file('photo')->store('photos','public');
-            
-        }
+       
+                    
         
         
-        Badu::create([
+        $badus=Badu::create([
             'name'=>$request->name,
             'price'=>$request->price,
-            'photo'=>$path
+            
         ]);
-      
+         $path=null;
+        if($request->hasFile('photo')){
+            foreach($request->file('photo')as $file){
+                $path=$file->store('photo','public');
+             $badus->badu()->create([
+                'path'=>$path,
+             ]);
+            }
 
+            }
+            
+      
+    
         return redirect()->route('badu.index');
         }
     

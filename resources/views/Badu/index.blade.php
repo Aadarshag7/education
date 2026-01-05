@@ -12,7 +12,10 @@
     
     <div class="">
     <h1>{{$badu->name}} {{$badu->price}} </h1>
-    <img src="{{asset('storage/'.$badu->photo)}}">
+    @foreach($badu->photos as $photo)
+    <img src="{{asset('storage/'.$photo->path)}}">
+    @endforeach
+
     <a href="{{route('badu.edit',$badu->id)}}" >EDIT</a>
     <form action="{{route('badu.destroy',$badu->id)}}" method="POST">
         @csrf 

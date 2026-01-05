@@ -14,7 +14,8 @@ class Badu extends Model
         'photo'
     ];
 
-    public function photo(){
-        return $this->belongsTo(Photo::class);
+    
+    public function badus(){
+        return $this->hasMany(Photo::class);
     }
 }
