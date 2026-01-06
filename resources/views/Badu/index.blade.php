@@ -15,6 +15,7 @@
     @foreach($badu->photos as $photo)
     <img src="{{asset('storage/'.$photo->path)}}">
     @endforeach
+    
 
     <a href="{{route('badu.edit',$badu->id)}}" >EDIT</a>
     <form action="{{route('badu.destroy',$badu->id)}}" method="POST">

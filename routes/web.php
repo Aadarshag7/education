@@ -1,11 +1,7 @@
 <?php
 
-use App\Http\Controllers\AaduController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BaduController;
-use App\Http\Controllers\FersController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,125 +15,17 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('home');
-})->name('home');
-
-Route::get('about',function(){
-    return view('about');
-})->name('about');
-
-Route::get('course',function(){
-    return view('course');
-})->name('course');
-
-Route::get('event',function(){
-    return view('event');
-})->name('event');
-
-Route::get('contact',function(){
-    return view('contact');
-})->name('contact');
-
-Route::get('blog',function(){
-    return view('blog');
-})->name('blog');
-
-
-Route::controller(AuthController::class)->group(function(){
-Route::get('register','register')->name('register');
-Route::post('register','registerSave')->name('registerSave');
-Route::get('login','login')->name('login');
-Route::post('login','loginAction')->name('loginAction');
+    return view('welcome');
 });
 
-Route::get('teacher',function(){
-    return view('teacher');
-})->name('teacher');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('come',function(){
-    return view('come');
-
-})->name('come');
-
-Route::get('hey',function(){
-    return view('hey');
-})->name('hey');
-
-Route::get('play',function(){
-return view('welcome');
-})->name('play');
-
-Route::post('/submit',function(Request $request){
-    return response()->json($request->all()
-);
-
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('subi',function(){
-    return view('sub');
-})->name('sub');
-
-Route::get('first',function(){
-    return view('first');
-})->name('first');
-
-Route::post('/submi',function(Request $request){
-    
-    $request->validate([
-        'dee'=>'required|min:3'
-    ]);
-    return response()->json($request->all()
-);
-});
-
-Route::get('form',function(){
-    return view('form');
-})->name('form');
-
-
-Route::post('sumi',function(Request $request){
-    $request->validate([
-        'set'=>'required'
-    ]);
-    return response()->json($request->all());
-});
- 
-Route::get('err', function(){
-    return view('err');
-})->name('err');
-
-Route::post('siu',function(Request $request){
-    $request->validate([
-        'name'=>'required'
-
-    ]);
-    return 'success';
-});
-
-Route::controller(FersController::class)->prefix('fers')->group(function(){
-    Route::get('','index')->name('index');
-    Route::get('create','create')->name('create');
-    Route::post('store','store')->name('store');
-    Route::get('edit/{id}','edit')->name('edit');
-    Route::put('edit/{id}','update')->name('update');
-    Route::delete('destroy/{id}','destroy')->name('destroy');
-});
-
-
-
-Route::controller(AaduController::class)->prefix('aadu')->group(function(){
-    Route::get('','index')->name('aadu.index');
-    Route::post('store','store')->name('aadu.store');
-    Route::get('edit/{id}','edit')->name('aadu.edit');
-    Route::get('create','create')->name('aadu.create');
-    ROute::put('edit/{id}','update')->name('aadu.update');
-});
-
-Route::controller(BaduController::class)->prefix('badu')->group(function(){
-    Route::get('','index')->name('badu.index');
-    Route::post('store','store')->name('badu.store');
-    Route::get('create','create')->name('badu.create');
-    Route::get('edit/{id}','edit')->name('badu.edit');
-    Route::put('edit/{id}','update')->name('badu.update');
-    Route::delete('destroy/{id}','destroy')->name('badu.destroy');
-});
+require __DIR__.'/auth.php';

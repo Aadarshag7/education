@@ -1,38 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Grid Repeat Example</title>
-<style>
-  .container {
-    display: grid;
-    grid-template-columns: repeat( minmax(50px,1fr));
-    gap: 10px;
-    padding: 10px;
-    background: lightgray;
-    margin:10px;
-    
-  }
-
-  .item {
-    background: teal;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 1.2rem;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    @vite('resources/css/app.css')
 </head>
 <body>
+    <div class="bg-blue-300  flex justify-end h-screen">
+    <form action="{{route('login')}}" method="POST">
+        @csrf 
+        <label for="email">Email</label>
+        <input type="email" class="box-border w-[300px]" id="email" name="email" placeholder="EMAIL" autocomplete="off">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="password" autocomplete="new-password">
+        <button type="submit" class="border-4 border-black rounded-l-[50%]"->submit</button>
 
-<div class="container">
-  <div class="item">1</div>
-  <div class="item">2</div>
-  <!-- <div class="item">3</div> -->
-  <!-- <div class="item">4</div> -->
-  <!-- <div class="item">5</div> -->
-  <!-- <div class="item">6</div> -->
-</div>
 
+    </form>
+    </div>
+    
 </body>
 </html>
