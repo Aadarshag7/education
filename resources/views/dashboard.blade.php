@@ -1,17 +1,22 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    @vite('resources/css/app.css')
+</head>
+<body class="h-screen">
+    <div class="h-full m-2 bg-gradient-to-r from-purple-200 to-yellow-300 grid grid-cols-[200px_1fr]">
+        <div class="bg-[radial-gradient(circle,_blue,_red)]">
+            <img src="admin/images/logo.png" class="w-[100px]">
+            <h1 class="text-black p-2 border-4 border-black relative top-3">Welcome to AG page!</h1>
+        </div>
+        <div class="bg-blue-300 h-[100px] relative">
+            <h1 class="text-green-500 text-2xl absolute left-[200px]">Dashboard</h1>
         </div>
     </div>
-</x-app-layout>
+
+    
+</body>
+</html>
