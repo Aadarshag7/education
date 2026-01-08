@@ -11,6 +11,19 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     public function __construct()
+     {
+        $this->middleware('auth');
+        $this->middleware('permission:create post')->only(['create','store']);
+        $this->middleware('permission:edit post')->only(['edit','update']);
+        $this->middleware('permission:delete post')->only(['destroy']);
+     }
+
+
+
+
+    
     public function index()
     {
         $posts=Post::all();
