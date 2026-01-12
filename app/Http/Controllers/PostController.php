@@ -44,12 +44,12 @@ class PostController extends Controller
     public function store(Request $request)
     {
         Post::create([
-            'title'=>$request->name,
+            'title'=>$request->title,
             'content'=>$request->content,
             'user_id'=>Auth::id()
         ]);
 
-        return redirect()->roue('post.index');
+        return redirect()->route('post.index');
     }
 
     /**
