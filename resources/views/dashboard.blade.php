@@ -15,6 +15,10 @@
         </div>
         <div class="bg-blue-300 h-[100px] relative">
             <h1 class="text-green-500 text-2xl absolute left-[200px]">Dashboard</h1>
+            <form action="{{route('logout')}}" method="POST" class="text-2xl border-4 border-black p-2 text-green absolute left-[1490px]">
+                @csrf
+                <button type="submit">logout</button>
+            </form>
         </div>
     </div>
 
