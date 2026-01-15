@@ -10,7 +10,7 @@ class BlogController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
-        $this->middleware('Permission:create post')->only(['create','store']);
+        $this->middleware('permission:create blog')->only(['create','store']);
 
 
     }
@@ -37,7 +37,9 @@ class BlogController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+   
+     {
+        
         Blog::create([
             'name'=>$request->name,
             'age'=>$request->age,

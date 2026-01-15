@@ -7,8 +7,8 @@
     @vite('resources/css/app.css')
 </head>
 <body class="h-screen bg-black">
-    <div class="flex flex-col h-full m-4 bg-[radial-gradient(circle,_red,_white)]">
-    <form action="{{route('post.store')}}" method="POST">
+    <div class=" h-full m-4 bg-[radial-gradient(circle,_red,_white)]">
+    <form action="{{route('post.store')}}" method="POST" class="flex flex-col h-full items-start">
         @csrf
         <label for="title">TITLE</label>
          <input type="text" name="title" id="title" placeholder="TITLE" class="box-border w-[1000px]">
