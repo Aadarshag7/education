@@ -6,17 +6,35 @@
     <title>Document</title>
     @vite('resources/css/app.css')
 </head>
-<body class="h-screen">
-    @if($blogs->count())
-    @foreach($blogs as $blog)
-    <div class="h-full bg-blue-100">
-        @can('create blog')
+<body class="min-h-screen  bg-red-500 ">
+    @can('create blog')
         <a href="{{route('blog.create')}}">Add</a>
         @endcan
         
-        <p>{{$blog->name}} {{$blog->age}}</p>
-    </div>
+    @if($blogs->count())
+    
+    <div class="h-full bg-blue-100 ">
+        <table class="w-full border-collapse p-[200px] 
+        border-4 border-black">
+            <thead class="">
+                <tr>
+                    <th >#</th>
+                    <th>NAME</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($blogs as $blog)
+                <tr>
+                    <td class="text-center">{{$loop->iteration}}</td>
+                    <td class="text-center">{{$blog->name}}</td>
+                    <td class="text-center">{{$blog->age}}</td>
+                </tr>
     @endforeach
+            </tbody>
+        </table>
+    </div>
+
     @else
     <p>NO ITEMS</p>
     @endif
