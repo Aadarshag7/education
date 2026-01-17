@@ -2,27 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
+use App\Models\Game;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class BlogController extends Controller
+class GameController extends Controller
 {
+
     public function __construct(){
         $this->middleware('auth');
-        $this->middleware('permission:create blog')->only(['create','store']);
-
-
+        $this->middleware('permission:create game')->only(['create','store']);
     }
-  
-
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $blogs=Blog::all();
-        return view('Blog.index',compact('blogs'));
+        $games=Game::all();
+        return view('Game.index',compact('games'));
     }
 
     /**
@@ -30,55 +27,56 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('Blog.create');
+        return view('Game.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-   
-     {
-        
-        Blog::create([
+    {
+        Game::create([
             'name'=>$request->name,
-            'age'=>$request->age,
+            'price'=>$request->price,
             'user_id'=>Auth::id()
         ]);
-        return redirect()->route('blog.index');
+
+        return redirect()->route('game.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Blog $blogs)
+    public function show(string $id)
     {
-        return view('Blog.edit',compact('blogs'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Blog $blog)
+    public function edit(Game $game)
     {
-         return view('Blog.edit',compact('blog'));
+        
+        return view('Game.edit',compact('game'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, Game $game)
     {
-        $blog->update($request->all());
-        return redirect()->route('blog.index');
+        $game->update($request->all());
+        return redirect()->route('game.index');
     }
 
     /**
+     * 
      * Remove the specified resource from storage.
      */
-    public function destroy(Blog $blog)
+    public function destroy(Game $game)
     {
-        $blog->delete();
-        return redirect()->route('blog.index');
+        $game->delete();
+        return redirect()->route('game.index');
     }
 }

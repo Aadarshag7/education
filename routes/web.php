@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +37,5 @@ require __DIR__.'/auth.php';
 
 Route::resource('post',PostController::class);
 Route::resource('blog',BlogController::class);
+Route::resource('game',GameController::class);
+Route::resource('sect',SectController::class);

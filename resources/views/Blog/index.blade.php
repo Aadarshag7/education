@@ -21,6 +21,7 @@
                     <th >#</th>
                     <th>NAME</th>
                     <th>Age</th>
+                    <th class="text-start">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +30,13 @@
                     <td class="text-center">{{$loop->iteration}}</td>
                     <td class="text-center">{{$blog->name}}</td>
                     <td class="text-center">{{$blog->age}}</td>
+                    <td><a href="{{route('blog.edit',$blog->id)}}">Edit</a>
+                    <form action="{{route('blog.destroy',$blog->id)}}" method="POST">
+                        @csrf 
+                        @method('DELETE')
+                        <button type="submit">delete</button>
+                    </form>
+                </td>
                 </tr>
     @endforeach
             </tbody>
