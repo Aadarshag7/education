@@ -52,22 +52,23 @@ class SectController extends Controller
      */
     public function edit(Sect $sect)
     {
-        
+        return view('Sect.edit',compact('sect'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Sect $sect)
     {
-        //
+        $sect->update($request->all());
+        return redirect()->route('sect.index');
     }
-
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Sect $sect)
     {
-        //
+        $sect->delete();
+        return redirect()->route('sect.index');
     }
 }
