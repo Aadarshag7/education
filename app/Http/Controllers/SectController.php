@@ -36,7 +36,7 @@ class SectController extends Controller
             'user_id'=>Auth::id()
         ]);
 
-        return redirect()->route('Sect.index');
+        return redirect()->route('sect.index');
     }
 
     /**

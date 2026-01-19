@@ -15,6 +15,7 @@
             <a href="{{route('post.index')}}" class="relative top-6 p-1 left-4 border-4 ">Post</a>
             <a href="{{route('blog.index')}}" class="relative top-[70px] right-9 border-4 p-1">Blog</a>
             <a href="{{route('game.index')}}" class="relative top-[114px] right-[87px] p-1 border-4 ">Game</a>
+            <a href="{{route('sect.index')}}" class="relative top-[160px] right-[139px] ">Sect</a>
         </div>
         <div class="bg-blue-300 h-[100px] relative">
             <h1 class="text-green-500 text-2xl absolute left-[200px]">Dashboard</h1>
