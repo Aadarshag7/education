@@ -9,13 +9,15 @@
 <body class="h-screen">
     <div class="h-full m-2 bg-gradient-to-r from-purple-200 to-yellow-300 grid grid-cols-[200px_1fr]">
         <div class="bg-[radial-gradient(circle,_blue,_red)]">
+
             <img src="admin/images/logo.png" class="w-[100px]">
             <h1 class="text-black p-2 border-4 border-black relative top-3">We
                 lcome to AG page!</h1>
             <a href="{{route('post.index')}}" class="relative top-6 p-1 left-4 border-4 ">Post</a>
             <a href="{{route('blog.index')}}" class="relative top-[70px] right-9 border-4 p-1">Blog</a>
             <a href="{{route('game.index')}}" class="relative top-[114px] right-[87px] p-1 border-4 ">Game</a>
-            <a href="{{route('sect.index')}}" class="relative top-[160px] right-[139px] ">Sect</a>
+            <a href="{{route('sect.index')}}" class="relative top-[140px]  border-4 left-[19px] p-1 
+             border-white  border-black">Sect</a>
         </div>
         <div class="bg-blue-300 h-[100px] relative">
             <h1 class="text-green-500 text-2xl absolute left-[200px]">Dashboard</h1>
