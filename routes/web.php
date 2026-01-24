@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\HectController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SectController;
@@ -39,3 +40,10 @@ Route::resource('post',PostController::class);
 Route::resource('blog',BlogController::class);
 Route::resource('game',GameController::class);
 Route::resource('sect',SectController::class);
+
+Route::controller(HectController::class)->prefix('hect')->group(function(){
+Route::get('','index')->name('hect.index');
+Route::get('create','create')->name('hect.create');
+Route::post('store','store')->name('hect.store');
+Route::get('edit/{id}', 'edit')->name('hect.edit');
+});

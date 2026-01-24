@@ -14,7 +14,7 @@
         <label for="name">name</label>
         <input type="text" name="name" id="name" value="{{$sect->name}}" placeholder="NAME">
         <label for="date">Date</label>
-        <input type="text" name="date" id="date" vlaue="{{$sect->date}}" placeholder="DATE">
+        <input type="text" name="date" id="date" value="{{$sect->date}}" placeholder="DATE">
         <button type="submit">DONE</button>
     </form>
 </div>
