@@ -17,6 +17,7 @@
             <a href="{{route('game.index')}}" class="relative top-[114px] right-[87px] p-1 border-4 ">Game</a>
             <a href="{{route('sect.index')}}" class="relative top-[132px]  border-4 left-[19px] p-1 
              border-white  border-black">Sect</a>
+             <a href="{{route('hect.index')}}" class="relative top-[171px] right-[30px] border-4 p-1">Hect</a>
         </div>
         <div class="bg-blue-300 h-[100px] relative">
             <h1 class="text-green-500 text-2xl absolute left-[200px]">Dashboard</h1>

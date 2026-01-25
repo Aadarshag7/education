@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DactController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HectController;
 use App\Http\Controllers\PostController;
@@ -42,8 +43,16 @@ Route::resource('game',GameController::class);
 Route::resource('sect',SectController::class);
 
 Route::controller(HectController::class)->prefix('hect')->group(function(){
-Route::get('','index')->name('hect.index');
-Route::get('create','create')->name('hect.create');
-Route::post('store','store')->name('hect.store');
-Route::get('edit/{id}', 'edit')->name('hect.edit');
+    Route::get('','index')->name('hect.index');
+    Route::get('create','create')->name('hect.create');
+    Route::post('store','store')->name('hect.store');
+    Route::get('edit/{id}','edit')->name('hect.edit');
+    Route::put('edit/{id}','update')->name('hect.update');
+});
+
+Route::controller(DactController::class)->prefix('dect')->group(function(){
+    Route::get('','index')->name('dect.index');
+    Route::get('create','create')->name('dect.create');
+    Route::post('store','store')->name('dect.store');
+    Route::get('edit/{id}','edit')->name('dect.edit');
 });

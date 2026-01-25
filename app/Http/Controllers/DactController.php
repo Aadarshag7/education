@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Hect;
+use App\Models\Dact;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class HectController extends Controller
+class DactController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $hects=Hect::all();
-        return view('Hect.index',compact('hects'));
+        $dacts=Dact::all();
+        return view('Dact.index',compact('dacts'));
     }
 
     /**
@@ -22,22 +21,15 @@ class HectController extends Controller
      */
     public function create()
     {
-        return view('Hect.create');
+        return view('Dact.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {   
+    {
         
-        Hect::create([
-            'name'=>$request->name,
-            'age'=>$request->age,
-            'user_id'=>Auth::id()
-        ]);
-
-        return redirect()->route('hect.index');
     }
 
     /**
@@ -53,8 +45,7 @@ class HectController extends Controller
      */
     public function edit(string $id)
     {
-        $hect=Hect::find($id);
-        return view('Hect.edit',compact('hect'));
+        //
     }
 
     /**
@@ -62,9 +53,7 @@ class HectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $hect=Hect::find($id);
-        $hect->update($request->all());
-        return redirect()->route('hect.index');
+        //
     }
 
     /**

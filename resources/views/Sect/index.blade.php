@@ -27,6 +27,9 @@
                     <td>{{$sect->date}}</td>
                     </tr>
                    @endforeach
+                   @else
+                   <p>No ITEM</p>
+                   @endif
                 </tbody>
             </thead>
         </table>
