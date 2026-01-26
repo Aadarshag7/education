@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DactController extends Controller
 {
@@ -29,7 +30,13 @@ class DactController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Dact::create([
+            'name'=>$request->name,
+            'price'=>$request->price,
+            'user_id'=>Auth::id()
+        ]);
+
+        return redirect()->route('dect.index');
     }
 
     /**
@@ -45,7 +52,8 @@ class DactController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $dect=Dact::find($id);
+        return view('Dact.edit',compact('dect'));
     }
 
     /**
@@ -53,7 +61,8 @@ class DactController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $dect=Dact::find($id);
+        $dect->update($request->all());
     }
 
     /**

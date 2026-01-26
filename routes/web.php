@@ -55,4 +55,5 @@ Route::controller(DactController::class)->prefix('dect')->group(function(){
     Route::get('create','create')->name('dect.create');
     Route::post('store','store')->name('dect.store');
     Route::get('edit/{id}','edit')->name('dect.edit');
+    Route::put('edit/{id}','update')->name('dect.update');
 });
