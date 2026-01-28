@@ -24,7 +24,7 @@
                         <td>{{$loop->iteration}}</td>
                         <td class="text-center">{{$dect->name}}</td>
                         <td class="text-center">{{$dect->price}}</td>
-                        <td><a href="{{route('dect.edit',$dect->id)}}">Edit</a> </td>
+                        <td class="text-center" ><a href="{{route('dect.edit',$dect->id)}}">Edit</a> </td>
                     </tr>
                 </tbody>
                 @endforeach

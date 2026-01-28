@@ -6,18 +6,16 @@
     <title>Document</title>
     @vite('resources/css/app.css')
 </head>
-<body class="h-screen bg-green-600">
-    <div class="h-full bg-[radial-gradient(ellipse,_black,_green)] m-9 p-4 shadow-xl shadow-black">
-        <form action="{{route('dect.edit',}}" method="POST">
+<body class="h-screen bg-red-500">
+    <div class="h-full m-5 p-2 bg-[radial-gradient(circle,_blue,_white)]">
+        <form action="{{route('fast.store')}}" method="POST">
             @csrf 
-            @method('PUT')
             <label for="name">NAME</label>
             <input type="text" name="name" id="name" placeholder="NAME">
             <label for="price">PRICE</label>
             <input type="number" name="price" id="price" placeholder="PRICE">
-            <button type="submit" class="border-4 p-1 border-black">DONE</button>
+            <button type="submit">DONE</button>
         </form>
     </div>
-    
 </body>
 </html>

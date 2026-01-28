@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DactController;
+use App\Http\Controllers\FastController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HectController;
 use App\Http\Controllers\PostController;
@@ -56,4 +57,12 @@ Route::controller(DactController::class)->prefix('dect')->group(function(){
     Route::post('store','store')->name('dect.store');
     Route::get('edit/{id}','edit')->name('dect.edit');
     Route::put('edit/{id}','update')->name('dect.update');
+});
+
+Route::controller(FastController::class)->prefix('fast')->group(function(){
+    Route::get('','index')->name('fast.index');
+    Route::get('create','create')->name('fast.create');
+    Route::post('store','store')->name('fast.store');
+
+
 });
