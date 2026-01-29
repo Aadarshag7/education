@@ -63,6 +63,9 @@ Route::controller(FastController::class)->prefix('fast')->group(function(){
     Route::get('','index')->name('fast.index');
     Route::get('create','create')->name('fast.create');
     Route::post('store','store')->name('fast.store');
+    Route::get('edit/{id}','edit')->name('fast.edit');
+    Route::put('edit/{id}','update')->name('fast.update');
+    Route::delete('delete/{id}','destroy')->name('fast.delete');
 
 
 });

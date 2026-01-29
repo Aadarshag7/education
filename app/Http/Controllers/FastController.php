@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Fast;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FastController extends Controller
 {
@@ -29,13 +30,16 @@ class FastController extends Controller
      */
     public function store(Request $request)
     { 
-          dd($request->all());
+          
         Fast::create([
             'name'=>$request->name,
             'price'=>$request->price,
+            'user_id'=>Auth::id()
 
 
         ]);
+
+        return redirect()->route('fast.index');
     }
 
     /**
@@ -51,7 +55,8 @@ class FastController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $fast=Fast::find($id);
+        return view('Fast.edit',compact('fast'));
     }
 
     /**
@@ -59,7 +64,10 @@ class FastController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $fast=Fast::find($id);
+        $fast->update($request->all());
+        return redirect()->route('Fast.index');
+
     }
 
     /**
@@ -67,6 +75,9 @@ class FastController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $fast=Fast::find($id);
+        $fast->delete();
+        return redirect()->route('fast.index');
+
     }
 }
