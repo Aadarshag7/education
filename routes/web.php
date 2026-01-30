@@ -7,6 +7,7 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\HectController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SecoController;
 use App\Http\Controllers\SectController;
 use Illuminate\Support\Facades\Route;
 
@@ -66,6 +67,14 @@ Route::controller(FastController::class)->prefix('fast')->group(function(){
     Route::get('edit/{id}','edit')->name('fast.edit');
     Route::put('edit/{id}','update')->name('fast.update');
     Route::delete('delete/{id}','destroy')->name('fast.delete');
+
+
+});
+
+Route::controller(SecoController::class)->prefix('seco')->group(function(){
+Route::get('','index')->name('seco.index');
+Route::get('create','create')->name('seco.create');
+Route::post('store','store')->name('seco.store');
 
 
 });
