@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Seco;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SecoController extends Controller
 {
@@ -11,7 +13,8 @@ class SecoController extends Controller
      */
     public function index()
     {
-        //
+        $secos=Seco::all();
+        return view('Seco.index',compact('secos'));
     }
 
     /**
@@ -19,7 +22,7 @@ class SecoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Seco.create');
     }
 
     /**
@@ -27,7 +30,14 @@ class SecoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+    
+        Seco::create([
+            'name'=>$request->name,
+            'age'=>$request->age,
+            'user_id'=>Auth::id()
+        ]);
+        return redirect()->route('seco.index');
     }
 
     /**
@@ -43,15 +53,19 @@ class SecoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $seco=Seco::find($id);
+        return view('Seco.edit',compact('seco'));
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        //
+    {   
+        // dd($request->all());
+        $seco=Seco::find($id);
+        $seco->update($request->all());
+        return redirect()->route('seco.index');
     }
 
     /**

@@ -8,7 +8,7 @@
 </head>
 <body class="h-screen">
     <div class="h-full m-2 bg-gradient-to-r from-purple-200 to-yellow-300 grid grid-cols-[200px_1fr]">
-        <div class="bg-[radial-gradient(circle,_blue,_red)]">
+        <div class="bg-[radial-gradient(circle,_blue,_red)] p-1">
 
             <img src="admin/images/logo.png" class="w-[100px]">
             <h1 class="text-black p-2 border-4 border-black relative top-3">Welcome to AG page!</h1>
@@ -20,7 +20,7 @@
              <a href="{{route('hect.index')}}" class="relative top-[171px] right-[30px] border-4 p-1">Hect</a>
              <a href="{{route('dect.index')}}" class="relative top-[216px] right-[82px] border-4 p-1">Dact</a>
              <a href="{{route('fast.index')}}" class="relative top-[260px] right-[129px] border-4 border-white p-1  ">Fast</a>
-             
+             <a href="{{route('seco.index')}}" class="relative top-[240px] right-[25px] border-4 p-1">Seco</a>
         </div>
         <div class="bg-blue-300 h-[100px] relative">
             <h1 class="text-green-500 text-2xl absolute left-[200px]">Dashboard</h1>

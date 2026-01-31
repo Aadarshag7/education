@@ -75,6 +75,8 @@ Route::controller(SecoController::class)->prefix('seco')->group(function(){
 Route::get('','index')->name('seco.index');
 Route::get('create','create')->name('seco.create');
 Route::post('store','store')->name('seco.store');
+Route::get('edit/{id}','edit')->name('seco.edit');
+Route::put('edit/{id}','update')->name('seco.update');
 
 
 });
