@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AwisController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DactController;
 use App\Http\Controllers\FastController;
@@ -79,4 +80,11 @@ Route::get('edit/{id}','edit')->name('seco.edit');
 Route::put('edit/{id}','update')->name('seco.update');
 
 
+});
+
+Route::controller(AwisController::class)->prefix('awis')->group(function(){
+    Route::get('','index')->name('awis.index');
+    Route::get('create','create')->name('awis.create');
+    Route::post('store','store')->name('awis.store');
+    
 });
