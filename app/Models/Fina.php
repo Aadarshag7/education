@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Awis extends Model
+class Fina extends Model
 {
     use HasFactory;
     protected $fillable = [
         'name',
-        'age',
-        'user_id'
-    ];
+        'age'
 
-    public function users(){
-        return $this->hasMany(User::class);
-    }
+    ];
 }

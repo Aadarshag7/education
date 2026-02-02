@@ -21,6 +21,7 @@
              <a href="{{route('dect.index')}}" class="relative top-[216px] right-[82px] border-4 p-1">Dact</a>
              <a href="{{route('fast.index')}}" class="relative top-[260px] right-[129px] border-4 border-white p-1  ">Fast</a>
              <a href="{{route('seco.index')}}" class="relative top-[240px] right-[25px] border-4 p-1">Seco</a>
+             <a href="{{route('awis.index')}}" class="">wowo</a>
         </div>
         <div class="bg-blue-300 h-[100px] relative">
             <h1 class="text-green-500 text-2xl absolute left-[200px]">Dashboard</h1>

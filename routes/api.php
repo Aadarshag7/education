@@ -1,7 +1,9 @@
+
 <?php
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FinaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('fina')->group(function(){
+Route::get('',[FinaController::class, 'index']);
+Route::post('store',[FinaController::class,'store']);
+Route::put('update',[FinaController::class,'update']);
 });

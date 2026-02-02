@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Awis;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AwisController extends Controller
 {
@@ -11,7 +13,8 @@ class AwisController extends Controller
      */
     public function index()
     {
-        
+        $awis=Awis::all();
+        return view('Awis.index',compact('awis'));
     }
 
     /**
@@ -26,8 +29,15 @@ class AwisController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+    {  
+        // dd($request->all());
+        Awis::create([
+            'name'=>$request->name,
+            'age'=>$request->age,
+            'user_id'=>Auth::id()
+        ]);
+
+        return redirect()->route('awis.index');
     }
 
     /**
@@ -43,7 +53,7 @@ class AwisController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('Awis.edit');
     }
 
     /**
