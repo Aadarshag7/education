@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateFinaRequest extends FormRequest
+class StoreMinaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,8 @@ class UpdateFinaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'sometimes|string',
-            'age'=>'sometimes|integer'
+            'name'=>'required|string',
+            'date'=>'required|date'
         ];
     }
 }

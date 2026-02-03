@@ -2,23 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreFinaRequest;
-use App\Http\Requests\UpdateFinaRequest;
-use App\Models\Fina;
+use App\Models\Mina;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\HttpCache\Store;
 
-class FinaController extends Controller
+class MinaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $finas=Fina::all();
+        $minas=Mina::all();
         return response()->json([
-            "success"=>true,
-            "data"=>$finas
+            "success"=>"true",
+            "data"=>$minas
         ]);
     }
 
@@ -33,12 +30,12 @@ class FinaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreFinaRequest $request)
+    public function store( $request)
     {
-        $finas=Fina::create($request->validated());
+        $minas=Mina::create($request->validated());
         return response()->json([
-         "success"=>true,
-         "data"=>$finas
+            "success"=>"true",
+            "data"=>$minas
         ],201);
     }
 
@@ -61,14 +58,9 @@ class FinaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFinaRequest $request, string $id)
+    public function update( $request, string $id)
     {
-        $fina=Fina::findorFail($id);
-        $fina->update($request->validated());
-        return response()->json([
-            "success"=>true,
-            "data"=>$fina
-        ],200);
+        
     }
 
     /**
@@ -76,10 +68,6 @@ class FinaController extends Controller
      */
     public function destroy(string $id)
     {
-        $fina=Fina::findorFail($id);
-        $fina->delete();
-        return response()->json([
-            "success"=>"true"
-        ]);
+        //
     }
 }

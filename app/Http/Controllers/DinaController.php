@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreFinaRequest;
-use App\Http\Requests\UpdateFinaRequest;
-use App\Models\Fina;
+use App\Http\Requests\StoreDinaRequest;
+use App\Http\Requests\UpdateDinaRequest;
+use App\Models\Dina;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\HttpCache\Store;
 
-class FinaController extends Controller
+class DinaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $finas=Fina::all();
+        $dinas=Dina::all();
         return response()->json([
-            "success"=>true,
-            "data"=>$finas
+            "sucsess"=>"true",
+            "data"=>$dinas
         ]);
     }
 
@@ -27,18 +26,19 @@ class FinaController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreFinaRequest $request)
+    public function store(StoreDinaRequest $request)
     {
-        $finas=Fina::create($request->validated());
+        
+        $dinas=Dina::create($request->validated());
         return response()->json([
-         "success"=>true,
-         "data"=>$finas
+            "success"=>"true",
+            "data"=>$dinas
         ],201);
     }
 
@@ -61,14 +61,14 @@ class FinaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFinaRequest $request, string $id)
+    public function update(UpdateDinaRequest $request, string $id)
     {
-        $fina=Fina::findorFail($id);
-        $fina->update($request->validated());
+        $dina=Dina::findorFail($id);
+        $dina->update($request->validated());
         return response()->json([
-            "success"=>true,
-            "data"=>$fina
-        ],200);
+            "success"=>"true",
+            "data"=>$dina
+        ]);
     }
 
     /**
@@ -76,10 +76,10 @@ class FinaController extends Controller
      */
     public function destroy(string $id)
     {
-        $fina=Fina::findorFail($id);
-        $fina->delete();
+        $dina=Dina::findorFail($id);
+        $dina->delete();
         return response()->json([
             "success"=>"true"
-        ]);
+        ],204);
     }
 }

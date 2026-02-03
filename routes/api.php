@@ -4,6 +4,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FinaController;
+use App\Http\Controllers\DinaController;
+use App\Http\Controllers\MinaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +25,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('fina')->group(function(){
 Route::get('',[FinaController::class, 'index']);
 Route::post('store',[FinaController::class,'store']);
-Route::put('update',[FinaController::class,'update']);
+Route::put('update/{id}',[FinaController::class,'update']);
+Route::delete('delete/{id}',[FinaController::class,'destroy']);
+});
+
+Route::prefix('dina')->group(function(){
+    Route::get('',[DinaController::class,'index']);
+    Route::post('store',[DinaController::class,'store']);
+    Route::put('update/{id}',[DinaController::class,'update']);
+    Route::delete('delete/{id}',[DinaController::class,'destroy']);
+});
+
+
+Route::prefix('mina')->group(function(){
+    Route::get('',[MinaController::class,'index']);
+    Route::post('store',[MinaController::class,'store']);
+    Route::put('update/{id}',[MinaController::class,'update']);
 });
