@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreMinaRequest;
-use App\Models\Mina;
+use App\Http\Requests\StoreSinaRequest;
+use App\Http\Requests\UpadateSinaRequest;
+use App\Models\Sina;
 use Illuminate\Http\Request;
 
-class MinaController extends Controller
+class SinaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $minas=Mina::all();
+        $sinas=Sina::all();
         return response()->json([
             "success"=>"true",
-            "data"=>$minas
+            "data"=>$sinas
         ]);
     }
 
@@ -31,12 +32,12 @@ class MinaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMinaRequest $request)
+    public function store(StoreSinaRequest $request)
     {
-        $minas=Mina::create($request->validated());
+        $sinas=Sina::create($request->validated());
         return response()->json([
             "success"=>"true",
-            "data"=>$minas
+            "data"=>$sinas
         ],201);
     }
 
@@ -59,10 +60,14 @@ class MinaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update( $request, string $id)
+    public function update(UpadateSinaRequest $request, string $id)
     {
-        $mina=Mina::findorFail($id);
-        $mina->update($request->validated());
+        $sina=Sina::findorFail($id);
+        $sina->update($request->validated());
+        return response()->json([
+            "success"=>"true",
+            "data"=>$sina
+        ]);
     }
 
     /**

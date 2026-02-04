@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreMinaRequest;
-use App\Models\Mina;
+use App\Http\Requests\StorePinaRequest;
+use App\Http\Requests\UpdateDinaRequest;
+use App\Models\Pina;
 use Illuminate\Http\Request;
 
-class MinaController extends Controller
+class PinaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $minas=Mina::all();
+        $pinas=Pina::all();
         return response()->json([
             "success"=>"true",
-            "data"=>$minas
+            "data"=>$pinas
+
         ]);
     }
 
@@ -25,19 +27,19 @@ class MinaController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMinaRequest $request)
+    public function store(StorePinaRequest $request)
     {
-        $minas=Mina::create($request->validated());
-        return response()->json([
-            "success"=>"true",
-            "data"=>$minas
-        ],201);
+       $pinas=Pina::create($request->validated());
+       return response()->json([
+        "success"=>"true",
+        "data"=>$pinas
+       ],201);    
     }
 
     /**
@@ -59,10 +61,14 @@ class MinaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update( $request, string $id)
+    public function update(UpdateDinaRequest $request, string $id)
     {
-        $mina=Mina::findorFail($id);
-        $mina->update($request->validated());
+        $pina=Pina::findorFail($id);
+        $pina->update($request->validated());
+        return response()->json([
+            "success"=>"true",
+            "data"=>$pina
+        ]);
     }
 
     /**
@@ -70,6 +76,11 @@ class MinaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $pina=Pina::findorFail($id);
+        $pina->delete();
+        return response()->json([
+            "success"=>"true",
+            "data"=>$pina
+        ]);
     }
 }

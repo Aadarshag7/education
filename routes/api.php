@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FinaController;
 use App\Http\Controllers\DinaController;
 use App\Http\Controllers\MinaController;
+use App\Http\Controllers\PinaController;
+use App\Http\Controllers\RinaController;
+use App\Http\Controllers\SinaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +44,25 @@ Route::prefix('mina')->group(function(){
     Route::get('',[MinaController::class,'index']);
     Route::post('store',[MinaController::class,'store']);
     Route::put('update/{id}',[MinaController::class,'update']);
+});
+
+
+Route::middleware('auth:sanctum')->prefix('pina')->group(function(){
+    Route::get('',[PinaController::class,'index']);
+    Route::post('store',[PinaController::class,'store']);
+    Route::put('update/{id}',[PinaController::class,'update']);
+    Route::delete('delete/{id}',[PinaController::class,'destroy']);
+});
+
+
+Route::middleware('auth:sanctum')->prefix('sina')->group(function(){
+    Route::get('',[SinaController::class,'index']);
+    Route::post('store',[SinaController::class,'store']);
+    Route::put('update/{id}',[SinaController::class,'update']);
+});
+
+Route::middleware('auth:sanctum')->prefix('rina')->group(function(){
+    Route::get('',[RinaController::class,'index']);
+    Route::post('store',['RinaController::class','store']);
+    Route::put('update/{id}',[RinaController::class,'update']);
 });

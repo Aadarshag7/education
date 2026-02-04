@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreMinaRequest;
-use App\Models\Mina;
+use App\Http\Requests\StoreRinaRequest;
+use App\Models\Rina;
 use Illuminate\Http\Request;
 
-class MinaController extends Controller
+class RinaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $minas=Mina::all();
+        $rinas=Rina::all();
         return response()->json([
             "success"=>"true",
-            "data"=>$minas
+            "data"=>$rinas
         ]);
     }
 
@@ -31,12 +31,12 @@ class MinaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMinaRequest $request)
+    public function store(StoreRinaRequest $request)
     {
-        $minas=Mina::create($request->validated());
+        $rinas=Rina::create($request->validated());
         return response()->json([
             "success"=>"true",
-            "data"=>$minas
+            "data"=>$rinas
         ],201);
     }
 
@@ -59,10 +59,9 @@ class MinaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update( $request, string $id)
+    public function update(Request $request, string $id)
     {
-        $mina=Mina::findorFail($id);
-        $mina->update($request->validated());
+        //
     }
 
     /**
