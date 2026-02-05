@@ -9,6 +9,10 @@ use App\Http\Controllers\MinaController;
 use App\Http\Controllers\PinaController;
 use App\Http\Controllers\RinaController;
 use App\Http\Controllers\SinaController;
+use App\Http\Controllers\VinaController;
+use App\Http\Controllers\winaController;
+use App\Http\Controllers\YinaController;
+use App\Models\Yina;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +67,28 @@ Route::middleware('auth:sanctum')->prefix('sina')->group(function(){
 
 Route::middleware('auth:sanctum')->prefix('rina')->group(function(){
     Route::get('',[RinaController::class,'index']);
-    Route::post('store',['RinaController::class','store']);
+    Route::post('store',[RinaController::class,'store']);
     Route::put('update/{id}',[RinaController::class,'update']);
+    Route::delete('delete/{id}',[RinaController::class,'destroy']);
+});
+
+Route::middleware('auth:sanctum')->prefix('vina')->group(function(){
+    Route::get('',[VinaController::class,'index']);
+    Route::post('store',[VinaController::class,'store']);
+    Route::put('update/{id}',[VinaController::class,'update']);
+    Route::delete('delete/{id}',[VinaController::class,'destroy']);
+});
+
+Route::middleware('auth:sanctum')->prefix('wina')->group(function(){
+Route::get('',[winaController::class,'index']);
+Route::post('store',[winaController::class,'store']);
+Route::put('update/{id}',[winaController::class,'']);
+Route::delete('delete/{id}',[winaController::class,'destroy']);
+});
+ 
+Route::middleware('auth:sanctum')->prefix('yina')->group(function(){
+    Route::get('',[YinaController::class,'index']);
+    Route::post('store',[YinaController::class,'store']);
+    Route::put('update/{id}',[YinaController::class,'update']);
+    Route::delete('delete/{id}',[YinaController::class,'destroy'])
 });

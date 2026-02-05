@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreRinaRequest;
-use App\Http\Requests\UpdateRinaRequest;
-use App\Models\Rina;
+use App\Http\Requests\StoreWinaRequest;
+use App\Http\Requests\UpdateWinaRequest;
+use App\Models\Wina;
 use Illuminate\Http\Request;
 
-class RinaController extends Controller
+class winaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $rinas=Rina::all();
+        $winas=Wina::all();
         return response()->json([
             "success"=>"true",
-            "data"=>$rinas
+            "data"=>$winas
         ]);
     }
 
@@ -32,12 +32,12 @@ class RinaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRinaRequest $request)
+    public function store(StoreWinaRequest $request)
     {
-        $rinas=Rina::create($request->validated());
+        $winas=Wina::create($request->validated());
         return response()->json([
             "success"=>"true",
-            "data"=>$rinas
+            "data"=>$winas
         ],201);
     }
 
@@ -60,13 +60,13 @@ class RinaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRinaRequest $request, string $id)
+    public function update(UpdateWinaRequest $request, string $id)
     {
-        $rina=Rina::findorFail($id);
-        $rina->update($request->validated());
+        $wina=Wina::findorFail($id);
+        $wina->update($request->validated());
         return response()->json([
             "success"=>"true",
-            "data"=>$rina
+            "data"=>$wina
         ]);
     }
 
@@ -75,11 +75,6 @@ class RinaController extends Controller
      */
     public function destroy(string $id)
     {
-        $rina=Rina::findorFail($id);
-        $rina->delete();
-        return response()->json([
-            "success"=>"true",
-            "data"=>$rina
-        ],204);
+        //
     }
 }

@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreRinaRequest;
-use App\Http\Requests\UpdateRinaRequest;
-use App\Models\Rina;
+use App\Http\Requests\StoreYinaRequest;
+use App\Models\Yina;
 use Illuminate\Http\Request;
 
-class RinaController extends Controller
+class YinaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $rinas=Rina::all();
+        $yinas=Yina::all();
         return response()->json([
             "success"=>"true",
-            "data"=>$rinas
+            "data"=>$yinas
         ]);
     }
 
@@ -32,13 +31,13 @@ class RinaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRinaRequest $request)
+    public function store(StoreYinaRequest $request)
     {
-        $rinas=Rina::create($request->validated());
+        $yinas=Yina::create($request->validated());
         return response()->json([
             "success"=>"true",
-            "data"=>$rinas
-        ],201);
+            "data"=>$yinas
+        ]);
     }
 
     /**
@@ -60,14 +59,12 @@ class RinaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRinaRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
-        $rina=Rina::findorFail($id);
-        $rina->update($request->validated());
-        return response()->json([
-            "success"=>"true",
-            "data"=>$rina
-        ]);
+        $yina=Yina::findorFail($id);
+        $yina->update(
+            
+        )
     }
 
     /**
@@ -75,11 +72,6 @@ class RinaController extends Controller
      */
     public function destroy(string $id)
     {
-        $rina=Rina::findorFail($id);
-        $rina->delete();
-        return response()->json([
-            "success"=>"true",
-            "data"=>$rina
-        ],204);
+        //
     }
 }

@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreRinaRequest;
-use App\Http\Requests\UpdateRinaRequest;
-use App\Models\Rina;
+use App\Http\Requests\StoreVinaRequest;
+use App\Http\Requests\UpdateVinaRequest;
+use App\Models\Vina;
 use Illuminate\Http\Request;
 
-class RinaController extends Controller
+class VinaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $rinas=Rina::all();
+        $vinas=Vina::all();
         return response()->json([
             "success"=>"true",
-            "data"=>$rinas
+            "data"=>$vinas
         ]);
     }
 
@@ -32,13 +32,14 @@ class RinaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRinaRequest $request)
+    public function store(StoreVinaRequest $request)
+
     {
-        $rinas=Rina::create($request->validated());
-        return response()->json([
-            "success"=>"true",
-            "data"=>$rinas
-        ],201);
+       $vinas=Vina::create($request->validated());
+       return response()->json([
+        "success"=>"true",
+        "data"=>$vinas
+       ],201); 
     }
 
     /**
@@ -60,13 +61,13 @@ class RinaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRinaRequest $request, string $id)
+    public function update(UpdateVinaRequest $request, string $id)
     {
-        $rina=Rina::findorFail($id);
-        $rina->update($request->validated());
+        $vina=Vina::findorFail($id);
+        $vina->update($request->validated());
         return response()->json([
             "success"=>"true",
-            "data"=>$rina
+            "data"=>$vina
         ]);
     }
 
@@ -75,11 +76,11 @@ class RinaController extends Controller
      */
     public function destroy(string $id)
     {
-        $rina=Rina::findorFail($id);
-        $rina->delete();
+        $vina=Vina::findorFail($id);
+        $vina->delete();
         return response()->json([
             "success"=>"true",
-            "data"=>$rina
-        ],204);
+        
+        ]);
     }
 }

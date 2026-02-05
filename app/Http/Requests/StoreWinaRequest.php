@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRinaRequest extends FormRequest
+class StoreWinaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,9 @@ class UpdateRinaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'sometimes|string',
-            'age'=>'sometimes|integer'
+            'name'=>'required|string',
+            'age'=>'required|integer',
+            'user_id'=>'required|exists:users,id'
         ];
     }
 }
