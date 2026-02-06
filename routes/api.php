@@ -9,10 +9,13 @@ use App\Http\Controllers\MinaController;
 use App\Http\Controllers\PinaController;
 use App\Http\Controllers\RinaController;
 use App\Http\Controllers\SinaController;
+use App\Http\Controllers\SinController;
+use App\Http\Controllers\TincController;
 use App\Http\Controllers\VinaController;
 use App\Http\Controllers\winaController;
 use App\Http\Controllers\YinaController;
-use App\Models\Yina;
+use App\Http\Controllers\ZincController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -90,5 +93,28 @@ Route::middleware('auth:sanctum')->prefix('yina')->group(function(){
     Route::get('',[YinaController::class,'index']);
     Route::post('store',[YinaController::class,'store']);
     Route::put('update/{id}',[YinaController::class,'update']);
-    Route::delete('delete/{id}',[YinaController::class,'destroy'])
+    Route::delete('delete/{id}',[YinaController::class,'destroy']);
 });
+
+Route::middleware('auth:sanctum')->prefix('zinc')->group(function(){
+Route::get('',[ZincController::class,'index']);
+Route::post('store',[ZincController::class,'store']);
+Route::put('update/{id}',[ZincController::class,'update']);
+Route::delete('delete/{id}',[ZincController::class,'destroy']);
+});
+
+Route::middleware('auth:sanctum')->prefix('tinc')->group(function(){
+    Route::get('', [TincController::class,'index']);
+    Route::post('store',[TincController::class,'store']);
+    Route::put('update/{id}',[TincController::class,'update']);
+    Route::delete('delete/{id}',[TincController::class,'destroy']);
+
+});
+
+Route::middleware('auth:sanctum')->prefix('sinc')->group(function(){
+Route::get('',[SinController::class,'index']);
+Route::post('store',[SinController::class,'store']);
+Route::put('update/{id}',[])
+});
+
+
