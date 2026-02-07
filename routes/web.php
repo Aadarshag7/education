@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AwisController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BoraController;
 use App\Http\Controllers\DactController;
 use App\Http\Controllers\FastController;
 use App\Http\Controllers\GameController;
@@ -87,4 +88,10 @@ Route::controller(AwisController::class)->prefix('awis')->group(function(){
     Route::get('create','create')->name('awis.create');
     Route::post('store','store')->name('awis.store');
     
+});
+
+Route::controller(BoraController::class)->prefix('bora')->group(function(){
+Route::get('','index')->name('bora.index');
+Route::post('store','store')->name('bora.store');
+Route::get('create','create')->name('bora.create');
 });

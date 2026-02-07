@@ -8,6 +8,7 @@ use App\Http\Controllers\DinaController;
 use App\Http\Controllers\MinaController;
 use App\Http\Controllers\PinaController;
 use App\Http\Controllers\RinaController;
+use App\Http\Controllers\RotaController;
 use App\Http\Controllers\SinaController;
 use App\Http\Controllers\SinController;
 use App\Http\Controllers\TincController;
@@ -114,7 +115,14 @@ Route::middleware('auth:sanctum')->prefix('tinc')->group(function(){
 Route::middleware('auth:sanctum')->prefix('sinc')->group(function(){
 Route::get('',[SinController::class,'index']);
 Route::post('store',[SinController::class,'store']);
-Route::put('update/{id}',[])
+Route::put('update/{id}',[SinController::class,'update']);
+Route::delete('delete/{id}',[SinController::class,'destroy']);
 });
+ 
+Route::middleware('auth:sanctum')->prefix('rota')->group(function(){
+Route::get('',[RotaController::class,'index']);
+Route::post('store',[RotaController::class,'store']);
+Route::put('') 
+
 
 

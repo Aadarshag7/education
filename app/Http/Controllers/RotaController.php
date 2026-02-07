@@ -2,23 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreSinaRequest;
-use App\Http\Requests\StoreSinRequest;
-use App\Http\Requests\UpdateSinRequest;
-use App\Models\Sinc;
+use App\Http\Requests\StoreRotaRequest;
+use App\Models\Rota;
 use Illuminate\Http\Request;
 
-class SinController extends Controller
+class RotaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $sincs=Sinc::all();
+        $rotas=Rota::all();
         return response()->json([
             "success"=>"true",
-            "data"=>$sincs
+            "data"=>$rotas
         ]);
     }
 
@@ -33,13 +31,13 @@ class SinController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSinRequest $request)
+    public function store(StoreRotaRequest $request)
     {
-        $sincs=Sinc::create($request->validated());
+        $rotas=Rota::create($request->validated());
         return response()->json([
             "success"=>"true",
-            "data"=>$sincs
-        ],201);
+            "data"=>$rotas
+        ]);
     }
 
     /**
@@ -61,14 +59,9 @@ class SinController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSinRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
-        $sinc=Sinc::findorFail($id);
-        $sinc->update($request->validated());
-        return response()->json([
-            "success"=>"true",
-            "data"=>$sinc
-        ]);
+        //
     }
 
     /**
@@ -76,11 +69,6 @@ class SinController extends Controller
      */
     public function destroy(string $id)
     {
-        $sinc=Sinc::findorFail($id);
-        $sinc->delete();
-        return response()->json([
-            "success"=>"true",
-            
-        ],204);
+        //
     }
 }
