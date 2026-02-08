@@ -95,3 +95,5 @@ Route::get('','index')->name('bora.index');
 Route::post('store','store')->name('bora.store');
 Route::get('create','create')->name('bora.create');
 });
+
+

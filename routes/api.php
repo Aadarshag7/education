@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FinaController;
 use App\Http\Controllers\DinaController;
+use App\Http\Controllers\HotaController;
 use App\Http\Controllers\MinaController;
 use App\Http\Controllers\PinaController;
 use App\Http\Controllers\RinaController;
@@ -122,7 +123,14 @@ Route::delete('delete/{id}',[SinController::class,'destroy']);
 Route::middleware('auth:sanctum')->prefix('rota')->group(function(){
 Route::get('',[RotaController::class,'index']);
 Route::post('store',[RotaController::class,'store']);
-Route::put('') 
+Route::put('update/{id}',[RotaController::class,'update']);
+Route::delete('delete/{id}',[RotaController::class,'destroy']);
+}); 
 
-
+Route::middleware('auth:sanctum')->prefix('hota')->group(function(){
+Route::get('',[HotaController::class,'index']);
+Route::post('store',[HotaController::class,'store']);
+Route::put('update/{id}',[HotaController::class,'update']);
+Route::delete('delete/{id}',[HotaController::class,'destroy']);
+});
 
