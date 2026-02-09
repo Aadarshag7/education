@@ -7,6 +7,7 @@ use App\Http\Controllers\FinaController;
 use App\Http\Controllers\DinaController;
 use App\Http\Controllers\HotaController;
 use App\Http\Controllers\MinaController;
+use App\Http\Controllers\NotaController;
 use App\Http\Controllers\PinaController;
 use App\Http\Controllers\RinaController;
 use App\Http\Controllers\RotaController;
@@ -134,3 +135,7 @@ Route::put('update/{id}',[HotaController::class,'update']);
 Route::delete('delete/{id}',[HotaController::class,'destroy']);
 });
 
+Route::middleware('auth:sanctum')->prefix('nota')->group(function(){
+Route::get('',[NotaController::class,'index']);
+Route::post('store',[NotaController::class,'store']);
+});

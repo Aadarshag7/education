@@ -4,9 +4,11 @@ use App\Http\Controllers\AwisController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BoraController;
 use App\Http\Controllers\DactController;
+use App\Http\Controllers\DotaController;
 use App\Http\Controllers\FastController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HectController;
+use App\Http\Controllers\KotaController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SecoController;
@@ -96,4 +98,19 @@ Route::post('store','store')->name('bora.store');
 Route::get('create','create')->name('bora.create');
 });
 
+Route::controller(DotaController::class)->prefix('dota')->group(function(){
+Route::get('','index')->name('dota.index');
+Route::get('create','create')->name('dota.create');
+Route::post('store','store')->name('dota.store');
+Route::get('edit/{id}','edit')->name('dota.edit');
+Route::put('edit/{id}','update')->name('dota.update');
+Route::delete('delete/{id}','destroy')->name('dota.delete');
+});
 
+Route::controller(KotaController::class)->prefix('kota')->group(function(){
+Route::get('','index')->name('kota.index');
+Route::get('create','create')->name('kota.create');
+Route::post('store','store')->name('kota.store');
+Route::get('edit/{id}','edit')->name('kota.edit');
+Route::put('update/{id}','update')->name('kota.update');
+});
