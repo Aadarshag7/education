@@ -7,9 +7,9 @@
     @vite('resources/css/app.css')
 </head>
 <body class="min-h-screen bg-white">
-    <div class="h-full shadow-xl shadow-black bg-green-300 m-4">
-        @if($kotas->count())
-        <table>
+    <div class="h-full shadow-xl shadow-black bg-green-200 m-4">
+        @if($sotas->count())
+        <table class="w-full">
             <thead>
                 <tr>
                     <th>#</th>
@@ -18,17 +18,17 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($kotas as $kota)
+                @foreach($sotas as $sota)
                 <tr>
-                 <td>{{$loop->iteration}}</td>
-                 <td>{{$kota->name}}</td>
-                 <td>{{$kota->age}}</td>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$sota->name}}</td>
+                <td>{{$sota->age}}</td>
                 </tr>
             </tbody>
         </table>
         @endforeach
         @else
-        <p>NO</p>
+        <p>No</p>
         @endif
     </div>
     

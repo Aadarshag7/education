@@ -13,6 +13,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SecoController;
 use App\Http\Controllers\SectController;
+use App\Http\Controllers\SotaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -113,4 +114,11 @@ Route::get('create','create')->name('kota.create');
 Route::post('store','store')->name('kota.store');
 Route::get('edit/{id}','edit')->name('kota.edit');
 Route::put('update/{id}','update')->name('kota.update');
+
+});
+
+Route::controller(SotaController::class)->prefix('sota')->group(function(){
+Route::get('','index')->name('sota.index');
+Route::post('store','store')->name('sota.store');
+Route::get('create','create')->name('sota.create');
 });
