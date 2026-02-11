@@ -7,12 +7,11 @@
     @vite('resources/css/app.css')
 </head>
 <body class="h-screen bg-white">
-    <div class="h-full bg-yellow-200">
-        <form action="{{route('sota.update',$sota->id}}" method="POST">
-            @method('PUT')
+    <div class="h-full bg-red-300 shadow-xl shadow-black m-4">
+        <form action="{{route('kuta.store')}}" method="POST">
             @csrf 
-            <input type="text" name="name" value="{{$sota->name}}" placeholder="NAME">
-            <input type="number" name="age" value="{{$sota->age}}" placeholder="AGE">
+            <input type="text" name="name" placeholder="NAME">
+            <input type="number" name="age" placeholder="AGE">
             <button type="submit">DONE</button>
         </form>
     </div>

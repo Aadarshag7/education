@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sota;
 use Illuminate\Http\Request;
 
-class SotaController extends Controller
+class KutaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $sotas=Sota::all();
-        return view('Sota.index',compact('sotas'));
+        //
     }
 
     /**
@@ -21,7 +19,7 @@ class SotaController extends Controller
      */
     public function create()
     {
-        return view('Kota.create');
+        //
     }
 
     /**
@@ -29,10 +27,7 @@ class SotaController extends Controller
      */
     public function store(Request $request)
     {
-        
-      Sota::create($request->validated());
-      return redirect()->route('sota.index');
-        
+        //
     }
 
     /**
@@ -48,8 +43,7 @@ class SotaController extends Controller
      */
     public function edit(string $id)
     {
-        $sota=Sota::finorFail($id);
-        return view('Sota.edit',compact('sota'));
+        //
     }
 
     /**

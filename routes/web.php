@@ -9,6 +9,7 @@ use App\Http\Controllers\FastController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HectController;
 use App\Http\Controllers\KotaController;
+use App\Http\Controllers\KutaController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SecoController;
@@ -121,4 +122,12 @@ Route::controller(SotaController::class)->prefix('sota')->group(function(){
 Route::get('','index')->name('sota.index');
 Route::post('store','store')->name('sota.store');
 Route::get('create','create')->name('sota.create');
+Route::get('edit/{id}','edit')->name('sota.edit');
+Route::put('edit/{id}','update')->name('sota.update');
+});
+
+Route::controller(KutaController::class)->prefix('kuta')->group(function(){
+Route::get('','index')->name('kuta.index');
+Route::get('create','create')->name('kuta.create');
+Route::post('store','store')->name('kuta.store');
 });
