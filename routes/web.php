@@ -10,6 +10,7 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\HectController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\KutaController;
+use App\Http\Controllers\LutaController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SecoController;
@@ -130,4 +131,12 @@ Route::controller(KutaController::class)->prefix('kuta')->group(function(){
 Route::get('','index')->name('kuta.index');
 Route::get('create','create')->name('kuta.create');
 Route::post('store','store')->name('kuta.store');
+Route::get('edit/{id}','edit')->name('kuta.edit');
+Route::put('edit/{id}','update')->name('kuta.update');
+});
+
+Route::controller(LutaController::class)->prefix('luta')->group(function(){
+Route::get('','index')->name('luta.index');
+Route::get('create','create')->name('luta.create');
+Route::post('store','store')->name('luta.store');
 });
