@@ -2,35 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreLutaRequest;
-use App\Models\Luta;
+use App\Http\Requests\StoreSutaRequest;
+use App\Models\Suta;
 use Illuminate\Http\Request;
 
-class LutaController extends Controller
+class SutaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $lutas=Luta::all();
-        return view('Luta.index',compact('lutas'));
+        $sutas=Suta::all();
+        return view('Suta.index',compact('suta'));
     }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('Luta.create');
+        return view('Suta.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLutaRequest $request)
+    public function store(StoreSutaRequest $request)
     {
-        Luta::create($request->validated());
-        return redirect()->route('luta.index');
+        Suta::create($request->validated());
+        return redirect()->route('suta.index'); 
+
+        
     }
 
     /**

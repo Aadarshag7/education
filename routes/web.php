@@ -11,11 +11,15 @@ use App\Http\Controllers\HectController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\KutaController;
 use App\Http\Controllers\LutaController;
+use App\Http\Controllers\NutaController;
+use App\Http\Controllers\PitaController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RutaController;
 use App\Http\Controllers\SecoController;
 use App\Http\Controllers\SectController;
 use App\Http\Controllers\SotaController;
+use App\Http\Controllers\SutaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -139,4 +143,34 @@ Route::controller(LutaController::class)->prefix('luta')->group(function(){
 Route::get('','index')->name('luta.index');
 Route::get('create','create')->name('luta.create');
 Route::post('store','store')->name('luta.store');
+Route::get('edit/{id}','edit')->name('luta.edit');
+});
+
+Route::controller(SutaController::class)->prefix('suta')->group(function(){
+Route::get('','index')->name('suta.index');
+Route::get('create','create')->name('suta.create');
+Route::post('store','store')->name('suta.store');
+});
+
+Route::controller(RutaController::class)->prefix('ruta')->group(function(){
+Route::get('','index')->name('ruta.index');
+Route::post('store','store')->name('ruta.store');
+Route::get('create','create')->name('ruta.create');
+Route::get('edit/{id}','edit')->name('ruta.edit');
+ROute::put('edit/{id}','update')->name('ruta.update');
+});
+
+Route::controller(NutaController::class)->prefix('nuta')->group(function(){
+Route::get('','index')->name('nuta.index');
+Route::get('create','create')->name('nuta.create');
+Route::post('store','store')->name('nuta.store');
+Route::get('edit/{id}','edit')->name('nuta.edit');
+Route::put('edit/{id}','update')->name('nuta.update');
+});
+
+Route::controller(PitaController::class)->prefix('pita')->group(function(){
+Route::get('','index')->name('pita.index');
+Route::get('create','create')->name('pita.create');
+Route::post('store','store')->name('pita.store');
+Route::get('edit/{id}','edit')->name('pita.edit');
 });

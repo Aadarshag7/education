@@ -7,32 +7,28 @@
     @vite('resources/css/app.css')
 </head>
 <body class="min-h-screen bg-white">
-    <div class="h-full m-4 bg-green-100 shadow-xl shadow-black">
-        @if($lutas->count())
-        <table class="w-full">
+    <div class="h-full bg-gradient-to-r from-red-200 to-green-300 m-4 p-2 shadow-xl shadow-black">
+        @if($nutas->count())
+        <table class>
             <thead>
-             <tr>
+            <tr>
                 <th>#</th>
                 <th>Name</th>
                 <th>Age</th>
-                <th>Action</th>
-             </tr>
+            </tr>
             </thead>
-            @foreach($lutas as $luta)
             <tbody>
+                @foreach($nutas as $nuta)
                 <tr>
-                    <td>{{$loop->iteration}}</td>
-                    <td>{{$luta->name}}</td>
-                    <td>{{$luta->age}}</td>
-                    <td><a href="">Edit</a></td>
+                 <td>{{$loop->iteration}}</td>
+                 <td>{{$nuta->name}}</td>
+                 <td>{{$nuta->age}}</td>
                 </tr>
-
+            @endforeach
             </tbody>
-        @endforeach    
         </table>
-        
-        @else 
-        <p>NO</p>
+        @else
+        <p>No</p>
         @endif
     </div>
     
