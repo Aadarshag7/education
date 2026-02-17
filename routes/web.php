@@ -8,6 +8,7 @@ use App\Http\Controllers\DotaController;
 use App\Http\Controllers\FastController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HectController;
+use App\Http\Controllers\HiraController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\KutaController;
 use App\Http\Controllers\LutaController;
@@ -173,4 +174,11 @@ Route::get('','index')->name('pita.index');
 Route::get('create','create')->name('pita.create');
 Route::post('store','store')->name('pita.store');
 Route::get('edit/{id}','edit')->name('pita.edit');
+});
+
+Route::controller(HiraController::class)->prefix('hira')->group(function(){
+Route::get('','index')->name('hira.index');
+Route::get('create','create')->name('hira.create');
+Route::post('store','store')->name('hira.store');
+
 });
