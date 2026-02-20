@@ -13,6 +13,7 @@ use App\Http\Controllers\RinaController;
 use App\Http\Controllers\RotaController;
 use App\Http\Controllers\SinaController;
 use App\Http\Controllers\SinController;
+use App\Http\Controllers\SoraController;
 use App\Http\Controllers\TincController;
 use App\Http\Controllers\VinaController;
 use App\Http\Controllers\winaController;
@@ -138,4 +139,9 @@ Route::delete('delete/{id}',[HotaController::class,'destroy']);
 Route::middleware('auth:sanctum')->prefix('nota')->group(function(){
 Route::get('',[NotaController::class,'index']);
 Route::post('store',[NotaController::class,'store']);
+});
+
+Route::prefix('sora')->group(function(){
+Route::get('',[SoraController::class,'index']);
+Route::post('store',[SoraController::class,'store']);
 });
