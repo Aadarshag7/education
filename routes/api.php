@@ -1,6 +1,7 @@
 
 <?php
 
+use App\Http\Controllers\CategController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FinaController;
@@ -144,4 +145,9 @@ Route::post('store',[NotaController::class,'store']);
 Route::prefix('sora')->group(function(){
 Route::get('',[SoraController::class,'index']);
 Route::post('store',[SoraController::class,'store']);
+});
+
+Route::prefix('categ')->group(function(){
+Route::get('',[CategController::class,'index']);
+Route::post('store',[CategController::class,'store']);
 });
