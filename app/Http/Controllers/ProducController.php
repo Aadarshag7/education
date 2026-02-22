@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProducResource;
+use App\Models\Produ;
 use Illuminate\Http\Request;
 
 class ProducController extends Controller
@@ -11,7 +13,8 @@ class ProducController extends Controller
      */
     public function index()
     {
-        //
+        $producs=Produ::with('catego')->get();
+        return ProducResource::collection($producs);
     }
 
     /**
@@ -27,7 +30,10 @@ class ProducController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $produs=Produ::create($request->all());
+        return response()->json([
+            "data"=>$producs
+        ],201);
     }
 
     /**

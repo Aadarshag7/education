@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CategResource;
 use App\Models\Categ;
+use App\Models\Catego;
 use Illuminate\Http\Request;
 
 class CategController extends Controller
@@ -12,7 +14,7 @@ class CategController extends Controller
      */
     public function index()
     {
-        $categs=Categ::all();
+        $categs=CategResource::collection(Catego::all());
         return response()->json([
             "data"=>$categs
         ]);
@@ -31,7 +33,7 @@ class CategController extends Controller
      */
     public function store(Request $request)
     {
-        $categs=Categ::create($request->all());
+        $categs=Catego::create($request->all());
         return response()->json([
             "data"=>$categs
         ],201);
