@@ -18,8 +18,10 @@ class ProducResource extends JsonResource
             'id'=>$this->id,
             'name'=>$this->name,
             'price'=>$this->price,
-            'catego'=>CategResource($this->whenLoaded('catego'))
+            'catego'=>new CategResource($this->whenLoaded('catego'))
 
-        ]
-    }
+        ];
+        }
+
+
 }

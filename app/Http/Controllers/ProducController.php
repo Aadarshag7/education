@@ -32,7 +32,7 @@ class ProducController extends Controller
     {
         $produs=Produ::create($request->all());
         return response()->json([
-            "data"=>$producs
+            "data"=>$produs
         ],201);
     }
 

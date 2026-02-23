@@ -10,6 +10,7 @@ use App\Http\Controllers\HotaController;
 use App\Http\Controllers\MinaController;
 use App\Http\Controllers\NotaController;
 use App\Http\Controllers\PinaController;
+use App\Http\Controllers\ProducController;
 use App\Http\Controllers\RinaController;
 use App\Http\Controllers\RotaController;
 use App\Http\Controllers\SinaController;
@@ -150,4 +151,9 @@ Route::post('store',[SoraController::class,'store']);
 Route::prefix('categ')->group(function(){
 Route::get('',[CategController::class,'index']);
 Route::post('store',[CategController::class,'store']);
+});
+
+Route::prefix('produc')->group(function(){
+Route::get('',[ProducController::class,'index']);
+Route::post('store',[ProducController::class,'store']);
 });
