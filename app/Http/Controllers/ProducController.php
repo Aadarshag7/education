@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 class ProducController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. 
      */
     public function index()
     {
-        $producs=Produ::with('catego')->get();
+        $producs=Produ::where('price','>','20')->with('catego')->paginate(5);
         return ProducResource::collection($producs);
     }
 
@@ -22,7 +22,7 @@ class ProducController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
